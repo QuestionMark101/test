@@ -4,10 +4,17 @@
     </script>
   </head>
   <body>
-    <button type="button" onclick="myFunction()">History Flooder</button>
+    <button type="button" onclick="functionOne()">History Flooder</button>
     <script>
-      function myFunction() {
+      function functionOne() {
         var num=prompt("History flood amount: "); done = false; x = window.location.href; for (var i=1; i<=num; i++) {history.pushState(0, 0, i==num?x:i.toString()); if(i==num){done=true}}if(done===true){alert("History flood successful! "+window.location.href+" now appears in your history "+num+(num==1?" time.":" times. (Made by JonasFlynn)"))}
       }
     </script>
+    <button type="button" onclick="functionTwo()">Clock</button>
+    <script>
+      function functionTwo() {
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];const d = new Date();let day=d.getDate();let dayweek = days[d.getDay()];let yr=d.getFullYear();let hr=d.getHours();let month1=d.getMonth();var month=month1+1;let min=d.getMinutes();alert("the date is "+month+"/"+day+"/"+yr+", the day is "+dayweek+", and the time is "+hr+":"+min+".");alert("by dragonmaster73101");
+      }
+    </script>
+    
   </body>
