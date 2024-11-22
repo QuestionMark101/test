@@ -1,10 +1,14 @@
 <DOCTYPE HTML>
   <head>
     <script>
-      alert("Made by _QuestionMark_, DO NOT SHARE")
+      alert("Made by _QuestionMark_, DO NOT SHARE");
+      var choose=prompt("Password?");
+        if (choose==1);
+          alert("sigma")
     </script>
   </head>
   <body>
+    <h1>Utilities Made by _QuestionMark_</h1>
     <p><button type="button" onclick="historyFlooder()">History</button></p>
     <script>
       function historyFlooder() {
@@ -17,7 +21,7 @@
         const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];const d = new Date();let day=d.getDate();let dayweek = days[d.getDay()];let yr=d.getFullYear();let hr=d.getHours();let month1=d.getMonth();var month=month1+1;let min=d.getMinutes();alert("the date is "+month+"/"+day+"/"+yr+", the day is "+dayweek+", and the time is "+hr+":"+min+".");;
       }
     </script>
-    <button type="button" onclick="localstorageNotes"()">Localstorage Notes</button>
+    <p><button type="button" onclick="localstorageNotes"()">Localstorage Notes</button></p>
     <script>
       function localstorageNotes() {
         alert("uses localstorage. use at your own risk."); var choose=prompt("do you want to make a new note, continue, or delete one? new=1 continue=2 delete=3 delete all=4 only works on same domain"); if (choose==1){ var newcalled=prompt("what do you want your new note to be called? make sure you remember what you call it"); window.localStorage.setItem(""+newcalled+"",""); alert("note added. run again to edit."); } if (choose==2){ var called=prompt("what is your note called? type exactly how you did the first time."); let value=window.localStorage.getItem(called); var note=prompt(called,value); window.localStorage.setItem(called,note); } if (choose==3){ var whatdelete=prompt("what note do you want to delete? type exactly how you did the first time."); localStorage.removeItem(whatdelete); alert("note deleted."); } if (choose==4){ localStorage.clear(); alert("all notes cleared."); }
