@@ -1,11 +1,22 @@
-<DOCTYPE HTML>
+<!DOCTYPE HTML>
+<html>
   <head>
     <script>
       alert("Made by _QuestionMark_, DO NOT SHARE");
-      var choose=prompt("Password?");
-        if (choose==sigma) {
-          alert("sigma")
+      
+      // Correct password
+      var correctPassword = "sigma";
+      
+      // Keep prompting until the correct password is entered
+      var choose;
+      while (choose !== correctPassword) {
+        choose = prompt("Password?");
+        if (choose !== correctPassword) {
+          alert("Incorrect password, try again.");
         }
+      }
+      
+      alert("Access granted!");
     </script>
   </head>
   <body>
@@ -13,20 +24,61 @@
     <p><button type="button" onclick="historyFlooder()">History</button></p>
     <script>
       function historyFlooder() {
-        var num=prompt("History flood amount: "); done = false; x = window.location.href; for (var i=1; i<=num; i++) {history.pushState(0, 0, i==num?x:i.toString()); if(i==num){done=true}}if(done===true){alert("History flood successful! "+window.location.href+" now appears in your history "+num+(num==1?" time.":" times. (Made by JonasFlynn)"))}
+        var num = prompt("History flood amount: ");
+        var done = false;
+        var x = window.location.href;
+        for (var i = 1; i <= num; i++) {
+          history.pushState(0, 0, i == num ? x : i.toString());
+          if (i == num) {
+            done = true;
+          }
+        }
+        if (done === true) {
+          alert("History flood successful! " + window.location.href + " now appears in your history " + num + (num == 1 ? " time." : " times. (Made by JonasFlynn)"));
+        }
       }
     </script>
     <p><button type="button" onclick="time()">Clock</button></p>
     <script>
       function time() {
-        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];const d = new Date();let day=d.getDate();let dayweek = days[d.getDay()];let yr=d.getFullYear();let hr=d.getHours();let month1=d.getMonth();var month=month1+1;let min=d.getMinutes();alert("the date is "+month+"/"+day+"/"+yr+", the day is "+dayweek+", and the time is "+hr+":"+min+".");;
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const d = new Date();
+        let day = d.getDate();
+        let dayweek = days[d.getDay()];
+        let yr = d.getFullYear();
+        let hr = d.getHours();
+        let month1 = d.getMonth();
+        var month = month1 + 1;
+        let min = d.getMinutes();
+        alert("The date is " + month + "/" + day + "/" + yr + ", the day is " + dayweek + ", and the time is " + hr + ":" + min + ".");
       }
     </script>
-    <p><button type="button" onclick="localstorageNotes"()">Localstorage Notes</button></p>
+    <p><button type="button" onclick="localstorageNotes()">Localstorage Notes</button></p>
     <script>
       function localstorageNotes() {
-        alert("uses localstorage. use at your own risk."); var choose=prompt("do you want to make a new note, continue, or delete one? new=1 continue=2 delete=3 delete all=4 only works on same domain"); if (choose==1){ var newcalled=prompt("what do you want your new note to be called? make sure you remember what you call it"); window.localStorage.setItem(""+newcalled+"",""); alert("note added. run again to edit."); } if (choose==2){ var called=prompt("what is your note called? type exactly how you did the first time."); let value=window.localStorage.getItem(called); var note=prompt(called,value); window.localStorage.setItem(called,note); } if (choose==3){ var whatdelete=prompt("what note do you want to delete? type exactly how you did the first time."); localStorage.removeItem(whatdelete); alert("note deleted."); } if (choose==4){ localStorage.clear(); alert("all notes cleared."); }
+        alert("Uses localstorage. Use at your own risk.");
+        var choose = prompt("Do you want to make a new note, continue, or delete one? new=1 continue=2 delete=3 delete all=4 (only works on same domain)");
+        if (choose == 1) {
+          var newcalled = prompt("What do you want your new note to be called? Make sure you remember what you call it");
+          window.localStorage.setItem("" + newcalled + "", "");
+          alert("Note added. Run again to edit.");
+        }
+        if (choose == 2) {
+          var called = prompt("What is your note called? Type exactly how you did the first time.");
+          let value = window.localStorage.getItem(called);
+          var note = prompt(called, value);
+          window.localStorage.setItem(called, note);
+        }
+        if (choose == 3) {
+          var whatdelete = prompt("What note do you want to delete? Type exactly how you did the first time.");
+          localStorage.removeItem(whatdelete);
+          alert("Note deleted.");
+        }
+        if (choose == 4) {
+          localStorage.clear();
+          alert("All notes cleared.");
+        }
       }
     </script>
-    
   </body>
+</html>
