@@ -78,8 +78,13 @@
     <button type="button" onclick="windowPopup()"></button>
     <script>
       function windowPopup() {
-        let name = prompt("What is your name?", "");
-        alert(name);
+        while (choose !== correctPassword) {
+          windowPopupOpen = prompt("What website do you want to open?");
+          if (choose !== correctPassword) {
+            alert("Incorrect password, try again.");
+          }
+        }
+      }
     </script>
   </body>
 </html>
